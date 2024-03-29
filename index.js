@@ -1,5 +1,5 @@
 import inquirer from "inquirer";
-let myPin = 1112;
+let myPin = 1234;
 let myBalance = 10000;
 let pinanswers = await inquirer.prompt({
     name: "userPin",
@@ -10,9 +10,9 @@ if (pinanswers.userPin === myPin) {
     console.log("Your Enter Pin Code is Correct:");
     const choice = await inquirer.prompt([
         {
-            message: "Select your option to perform action:",
-            type: "list",
             name: "selection",
+            type: "list",
+            message: "Select your option to perform action:",
             choices: ["Withdrawl", "Balance"],
         },
     ]);
@@ -29,7 +29,7 @@ if (pinanswers.userPin === myPin) {
             console.log("Now Your Account Balance is Rs.", myBalance);
         }
         else {
-            console.log("Your Account Balance is Short:", myBalance);
+            console.log('Your account balance is not enough for withdrawl:', myBalance);
         }
     }
     else {
