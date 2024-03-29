@@ -13,10 +13,10 @@ if (pinanswers.userPin === myPin) {
             name: "selection",
             type: "list",
             message: "Select your option to perform action:",
-            choices: ["Withdrawl", "Balance"],
+            choices: ["Withdrawl", "FastCash", "Balance"],
         },
     ]);
-    if (choice.selection === "Withdrawl") {
+    if (choice.selection === "Withdrawl" || choice.selection === "FastCash") {
         let withdarwalAmt = await inquirer.prompt({
             name: "amt",
             type: "number",
@@ -29,11 +29,11 @@ if (pinanswers.userPin === myPin) {
             console.log("Now Your Account Balance is Rs.", myBalance);
         }
         else {
-            console.log('Your account balance is not enough for withdrawl:', myBalance);
+            console.log("Your account balance is not enough for withdrawl:", myBalance);
         }
     }
     else {
-        console.log(choice.selection);
+        console.log("Your Account Balance is Rs.", myBalance);
     }
 }
 else {
