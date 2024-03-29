@@ -17,7 +17,7 @@ if (pinanswers.userPin === myPin) {
         choices: ["Withdrawl", "FastCash", "Balance"],
         },
     ]);
-        if (choice.selection === "Withdrawl" || choice.selection === "FastCash") {
+        if (choice.selection === "Withdrawl") {
             let withdarwalAmt = await inquirer.prompt({
             name: "amt",
             type: "number",
@@ -34,7 +34,29 @@ if (pinanswers.userPin === myPin) {
                     myBalance
                 );
                 }
-        } else {
+        } else if (choice.selection === "FastCash") {
+                   const choice = await inquirer.prompt([
+                    {
+                    name: "selection",
+                    type: "list",
+                    message: "Select your withdrawl Amount:",
+                    choices: ["1000", "2000", "5000", "10000", "15000"],
+                    },
+            ]);     
+            console.log(choice.selection);
+            //     if (withdarwalAmt.amt <= myBalance) {
+            //     console.log(choice.selection);
+            //     console.log(withdarwalAmt.amt);
+            //     myBalance = myBalance - withdarwalAmt.amt;
+            //     console.log("Now Your Account Balance is Rs.", myBalance);
+            //     } else {
+            //     console.log(
+            //         "Your account balance is not enough for withdrawl:",
+            //         myBalance
+            //     );
+            //     }
+        } 
+    else {
             console.log("Your Account Balance is Rs.", myBalance);
         }
 } else {
