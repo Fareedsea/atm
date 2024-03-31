@@ -27,40 +27,35 @@ if (pinanswers.userPin === myPin) {
                 console.log(choice.selection);
                 console.log(withdarwalAmt.amt);
                 myBalance = myBalance - withdarwalAmt.amt;
-                console.log("Now Your Account Balance is Rs.", myBalance);
+                console.log(`Now Your Account Balance is Rs. ${myBalance}`);
                 } else {
-                console.log(
-                    "Your account balance is not enough for withdrawl:",
-                    myBalance
+                console.log(`Your account balance is not enough for withdrawl: ${myBalance}`
                 );
                 }
         } else if (choice.selection === "FastCash") {
-                   const choice = await inquirer.prompt([
+                   const fChoice = await inquirer.prompt([
                     {
-                    name: "selection",
+                    name: "amt",
                     type: "list",
-                    message: "Select your withdrawl Amount:",
-                    choices: ["1000", "2000", "5000", "10000", "15000"],
+                    message: "Select your Fast Cash Amount:",
+                    choices: [1000, 2000, 5000, 10000, 15000],
                     },
             ]);     
-            console.log(choice.selection);
-            //     if (withdarwalAmt.amt <= myBalance) {
-            //     console.log(choice.selection);
-            //     console.log(withdarwalAmt.amt);
-            //     myBalance = myBalance - withdarwalAmt.amt;
-            //     console.log("Now Your Account Balance is Rs.", myBalance);
-            //     } else {
-            //     console.log(
-            //         "Your account balance is not enough for withdrawl:",
-            //         myBalance
-            //     );
-            //     }
+            
+                if (fChoice.amt <= myBalance) {
+                    console.log(`fareed fast cash amount`);        
+                    console.log(fChoice.amt);        
+                    myBalance = myBalance - fChoice.amt;
+                    console.log(`Now Your Account Balance is Rs. ${myBalance}`);
+                } else {
+                    console.log(`Your account balance is not enough for withdrawl: ${myBalance}`);
+                }
         } 
     else {
-            console.log("Your Account Balance is Rs.", myBalance);
+            console.log(`Your Account Balance is Rs. ${myBalance} `);
         }
 } else {
   console.log("Your Enter Pin Code is Incorrect:");
 }
-console.log("Last line Your Account Balance is Rs.", myBalance);
+console.log(`Last line Your Account Balance is Rs. ${myBalance}`);
 console.log(pinanswers.userPin);
