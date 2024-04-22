@@ -1,16 +1,17 @@
 {
   "name": "fsea-atm",
-  "version": "1.0.1",
-  "description": "This is a ATM Project",
+  "version": "1.0.2",
+  "description": "This is an ATM Project",
   "main": "index.js",
   "type": "module",
+  "bin": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Fareed",
-  "license": "MIT",
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "inquirer": "^9.2.16"
+    "inquirer": "^9.2.19"
   },
   "devDependencies": {
     "@types/inquirer": "^9.0.7"
