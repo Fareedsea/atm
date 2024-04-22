@@ -1,6 +1,6 @@
 {
-  "name": "atm",
-  "version": "1.0.0",
+  "name": "fsea-atm",
+  "version": "1.0.1",
   "description": "This is a ATM Project",
   "main": "index.js",
   "type": "module",
